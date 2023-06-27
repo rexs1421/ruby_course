@@ -1,0 +1,39 @@
+<%= form_with(model: operation) do |form| %>
+  <% if operation.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(operation.errors.count, "error") %> prohibited this operation from being saved:</h2>
+
+      <ul>
+        <% operation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+   <%= form.label :amount, class: "form-label" %>
+     <%= form.text_field :amount, required: true, class: "form-control",style: "width: 300px;"  %>
+  </div>
+
+  <div>
+    <%= form.label :odate,  class: "form-label", style: "display: block" %>
+    <%= form.datetime_field :odate, required: true, class: "form-control",style: "width: 300px;"  %>
+  </div>
+
+ <div>
+  <%= form.label :description %>
+  <%= form.text_field :description, required: true, class: "form-control",style: "width: 300px;"  %>
+</div>
+
+
+<div class="form-floating">
+  <%= select(:operation, :category_id, @operation_categories, {},class: "form-select",style: "width: 300px;") %>
+
+ 
+  <label for="floatingSelect"> <%= form.label :category_id %></label>
+</div>
+  <div>
+    <%= form.submit class:"btn btn-primary" %>
+  </div>
+<% end %>

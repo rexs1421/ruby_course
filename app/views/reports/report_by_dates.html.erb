@@ -1,0 +1,60 @@
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Звіт по Даті <span class="text-muted">За період з <%= params[:start_date] %> по <%= params[:end_date] %></h2>
+        <p class="lead"><table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Категорія</th>
+      <th>Опис</th>
+      <th>Витрати</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @operations.each do |(odate, category_name,description), amount| %>
+      <tr>
+        <td><%= category_name %></td>
+         <td><%= description %></td>
+        <td><%= amount %></td>
+      </tr>
+        <% end %>
+    <tr>
+      <td><strong>Загальна сума:</strong></td>
+      <td><strong><%= @total_amount %></strong></td>
+    </tr>
+  </tbody>
+</table>
+</p></div>
+      <div class="col-md-5">
+      <h2 class="featurette-heading fw-normal lh-1">Графік витрат за вибраний період</h2>
+        <div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: <%= raw @odate %>,
+      datasets: [{
+        label: 'Сума витрат',
+        data: <%= @amount %>,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+      </div>
+    </div>

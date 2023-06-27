@@ -1,0 +1,31 @@
+<h1>Генерація звітів</h1>
+
+<form method="get" style="width: 500px;">
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Початок</label>
+<input name="start_date" type="date"  class="form-control"required>
+  <label for="exampleFormControlInput1" class="form-label">Кінець</label>
+  <input name="end_date" type="date"  class="form-control"required>
+</div>
+<div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupSelect01">Тип операції </label>
+  <select class="form-select custom-width" name="">
+    <option value="">Доходи</option>
+  <option value="">Витрати</option>
+  </select>
+</div>
+<div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupSelect01">Категорія </label>
+  <select class="form-select" name="category_id">
+    <option class="input-group mb-3" value=""></option>
+<%= @categories.each do |category|%>
+  <option value="<%= category.id %>"><%= category.name %></option>
+       <% end %>
+      
+</select>
+</div>
+ <br>
+<button type="submit" class="btn btn-success" formaction="<%= report_by_dates_path %>">Звіт по датам</button>
+<button type="submit" class="btn btn-success" formaction="<%= report_by_category_path %>">Звіт по категоріям</button>
+ 
+</form>

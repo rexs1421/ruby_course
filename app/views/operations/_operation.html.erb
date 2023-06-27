@@ -1,0 +1,11 @@
+
+<tbody>
+ 
+    <tr>
+      <td width="200px"><%= link_to operation.description, operation %></td>
+      <td><%= operation.category.try(:name) %></td>
+      <td><%= operation.odate %></td>
+      <td><%= operation.amount %></td>
+    </tr>
+ 
+</tbody>

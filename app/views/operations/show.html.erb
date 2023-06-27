@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @operation %>
+
+<div>
+  <%= link_to "Редагувати", edit_operation_path(@operation) %> |
+  <%= link_to "Назад", operations_path %>
+
+  <%= button_to "Видалити дію", @operation, method: :delete, class:"btn btn-primary" %>
+</div>

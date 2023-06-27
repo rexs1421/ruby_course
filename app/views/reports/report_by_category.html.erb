@@ -1,0 +1,59 @@
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Звіт по категоріям</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Категорія</th>
+      <th>Сума витрат</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    <% @operations.each do |category_name, total_amount| %>
+      <tr>
+        <td><%= category_name %></td>
+        <td><%= total_amount %></td>
+        
+      </tr>
+    <% end %>
+    <tr>
+      <td><strong>Загальна сума:</strong></td>
+      <td><strong><%= @total_amount %></strong></td>
+    </tr>
+  </tbody>
+</table>
+</p></div>
+      <div class="col-md-5">
+      <h2 class="featurette-heading fw-normal lh-1">Графік витрат <br> з <%=raw params[:start_date]%>по<%=params[:end_date]%> </h2>
+        <div>
+  <canvas id="myChart"></canvas>
+</div>
+
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: <%= raw @odate%>,
+      datasets: [{
+        label: 'Сума витрат',
+        data: <%= @amount%>,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+      </div>
+    </div>

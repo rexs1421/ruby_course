@@ -1,0 +1,17 @@
+<h2 class="featurette-heading fw-normal lh-1">Категоії</h2>
+<%= link_to "Додати категорію", new_category_path %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Назва</th>
+      <th scope="col">Опис:</th>
+    </tr>
+  </thead>
+  <% @categories.each do |category| %>
+    <%= render category %>
+   
+  <% end %>
+</tbody>
+</table>
+
+

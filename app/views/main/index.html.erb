@@ -1,0 +1,57 @@
+<div class="row">
+      <div class="col-lg-4">
+                <title>Placeholder</title>
+        <%= image_tag "money.png", alt: "Нова транзакція", width: 140, height: 140 %>
+        <h2 class="fw-normal">Нова транзакція</h2>
+        <p>Функція "Додати витрати" дозволяє вам легко фіксувати свої витрати.</p>
+        <p><a class="btn btn-secondary" href="<%= new_operation_path %>">Детальніше »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+       <%= image_tag "category.png", alt: "Категорії", width: 140, height: 140 %>
+        <h2 class="fw-normal">Категорії</h2>
+        <p>Категорії у фінансовому менеджері - це зручний спосіб організації вашої фінансової інформації.</p>
+        <p><a class="btn btn-secondary" href="<%= categories_path %>">Детальніше »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+         <%= image_tag "report.png", alt: "Звіт", width: 140, height: 140 %>
+        <h2 class="fw-normal">Звіти</h2>
+        <p>Функція звітів у фінансовому менеджері забезпечує вам інструменти для аналізу та огляду вашої фінансової ситуації. </p>
+        <p><a class="btn btn-secondary" href="<%= reports_index_path %>">Детальніше »</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div>
+<hr class="featurette-divider">
+<div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Організуйте свої витрати:  <span class="text-muted">функція додавання категорій витрат у фінансовому менеджері.</span></h2>
+        <p class="lead">Функція додавання категорій витрат дозволяє вам систематизувати свої витрати. Ви можете створювати різні категорії, такі як їжа, транспорт, розваги тощо, і
+         прив'язувати свої витрати до цих категорій. Це допомагає вам зрозуміти, на що саме йдуть ваші гроші та ефективніше управляти своїм бюджетом.</p>
+      </div>
+      <div class="col-md-5">
+    
+ <%= image_tag "new_category.jpg", alt: "Нова категорія", width: 500, height: 500 %>
+      </div>
+    </div>
+<hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">Фіксуйте свої витрати з легкістю: <span class="text-muted">функція 'Додати витрати' у фінансовому менеджері.</span></h2>
+        <p class="lead">Функція "Додати витрати" у веб-додатку фінансового менеджера надає вам зручний спосіб фіксувати ваші витрати. Ви можете ввести деталі 
+        вашої витрати, такі як суму, дату, опис тощо, і призначити її певній категорії. Це дозволяє вам точно відстежувати ваші витрати, аналізувати їх та керувати вашим бюджетом.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+         <%= image_tag "new_operation.jpg", alt: "Нова операція", width: 500, height: 500 %>
+      </div>
+    </div>
+    <hr class="featurette-divider">
+<div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Графічний аналіз вашої фінансової ситуації: <span class="text-muted">функція звітів з графіками у фінансовому менеджері.</span></h2>
+        <p class="lead">
+Функція звітів у фінансовому менеджері надає вам можливість отримати детальний інсайт у ваші фінанси шляхом графічного аналізу. 
+Ця функція дозволяє вам генерувати різноманітні звіти з використанням графіків, діаграм та інших візуальних засобів представлення даних.</p>
+      </div>
+      <div class="col-md-5">
+    
+ <%= image_tag "report.jpg", alt: "Нова категорія", width: 500, height: 500 %>
+      </div>
+    </div>

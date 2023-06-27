@@ -1,0 +1,13 @@
+operation1:
+  odate: 2023-05-24
+  category: category1
+  amount: 10
+operation2:
+  odate: 2023-05-25
+  category: category1
+  amount: 10
+operation3:
+  odate: 2023-05-26
+  category: category2
+  amount: 10.0
+  
